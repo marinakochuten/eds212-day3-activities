@@ -50,10 +50,11 @@ if (main_ingredient == "veggie") {
 
 ```{r}
 fish <- c(8, 10, 12, 23)
+fish_types <- c("goldfish", "tetras", "guppies", "mollies")
 
-for (i in fish) {
-  prop_tot_fish <- i / sum(fish)
-  print(prop_tot_fish)
+for (i in seq_along(fish)) {
+  prop_tot_fish <- round((fish[i] / sum(fish)) * 100)
+  print(paste(fish_types[i]  , "make up"  , prop_tot_fish, "% of all fish in the tank."))
 }
 ```
 
